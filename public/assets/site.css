@@ -59,7 +59,13 @@ header .btn{min-height:42px;padding:0 16px;font-size:15px}
 .note{font-size:13px;color:#8E99B0;margin-top:26px}
 /* palco dos celulares */
 .stage{position:relative;width:100%}
-.rig{position:absolute;left:50%;bottom:0;transform-origin:bottom center}
+.rig{position:absolute;left:50%;bottom:0;transform-origin:bottom center;transform:translateX(-50%) scale(.9)}
+/* tamanho dos celulares sem depender do JavaScript (o script refina quando roda) */
+.stage{height:450px}
+.stage[data-w="300"]{height:480px}
+@media(max-width:860px){.stage{height:430px}.stage .rig{transform:translateX(-50%) scale(.82)}.stage[data-w="300"]{height:430px}}
+@media(max-width:600px){.stage{height:280px}.stage .rig{transform:translateX(-50%) scale(.53)}.stage[data-w="300"]{height:430px}.stage[data-w="300"] .rig{transform:translateX(-50%) scale(.82)}}
+@media(max-width:360px){.stage{height:250px}.stage .rig{transform:translateX(-50%) scale(.47)}}
 .ph{position:absolute;width:250px;height:530px;border-radius:42px;background:#0A0C12;padding:9px;box-shadow:0 40px 70px rgba(0,0,0,.45),inset 0 0 0 1.5px #2C3346,inset 0 0 0 4px #10131B}
 .ph .s{position:relative;height:100%;border-radius:34px;overflow:hidden;font-size:11px;display:flex;flex-direction:column;line-height:1.3}
 .ph .island{position:absolute;top:9px;left:50%;width:78px;height:22px;margin-left:-39px;border-radius:12px;background:#000;z-index:5}
